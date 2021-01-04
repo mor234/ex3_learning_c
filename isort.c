@@ -32,13 +32,12 @@ int main(int argc, char* argv[]) {
 }
 void shift_element(int* arr, int i)
 {
-    i--;//2
+    i--;
     while(i>0)
     {
         *(arr+i)=*(arr+i-1);
         i--;
     }
-
 }
 void insertion_sort(int* arr , int len)
 {
