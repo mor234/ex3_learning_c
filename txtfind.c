@@ -7,7 +7,7 @@ int main(int argc, char* argv[]) {
 		printf("error. did not succside in memory allocatin\n");
 	getword(str);//get the string
 	char opt = getchar();
-	//getchar();//get empty line
+	getchar();//get empty line
 
 	if (opt == 'a')
 		print_lines(str);

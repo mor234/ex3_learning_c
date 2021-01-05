@@ -163,48 +163,50 @@ int similar(char* s, char* t, int n)
 */
 void print_lines(char* str)
 {
-	char* line;
+	char* line = (char*)malloc(sizeof(char) * LINE);
+	if (line == NULL)
+	{
+		printf("error. did not succside in memory allocatin\n");
+		return;
+	}
 	for (int i = 0; i < MAX_LINE_NUMBER; i++)
 	{
-		line = (char*)malloc(sizeof(char) * LINE);
-		if (line == NULL)
-			printf("error. did not succside in memory allocatin\n");
-
-		//printf("sent to sub string\n");
 		int size = getLine(line);
 		if (size > 0)
 		{
 			if (substring(line, str))
 				printf("%s\n", line);
 		}
-		free(line);
 		if (size < 0)
-			return;//EOF
+			break;//EOF
 	}
+	free(line);
 
 }
 /*
-the function get string to look for, get the words of the text (from standart input), and print the words that are similar to the string
+the function get string to look for, get the words of the text (from standart input),
+and print the words that are similar to the string
 (diffrent only by loosing one letter)
 */
 void print_similar_words(char* str)
 {
-	char* word;
+	char* word= (char*)malloc(sizeof(char) * WORD);
+	if (word == NULL)
+	{
+		printf("error. did not succside in memory allocatin\n");
+		return;
+	}
 	for (int i = 0; i < MAX_LINE_NUMBER; i++)
 	{
-		word = (char*)malloc(sizeof(char) * WORD);
-		if (word == NULL)
-			printf("error. did not succside in memory allocatin\n");
-
 		int size = getword(word);
 		if (size > 0)
 		{
 			if (similar(word, str, 1))
 				printf("%s\n", word);
 		}
-		free(word);
 		if (size < 0)
 			break;//EOF
 	}
+	free(word);
 
 }
