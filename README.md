@@ -2,5 +2,5 @@
 ## pointers and strings in c 
 Was done as a student assinment.   
 Using the makefile, create 2 executales: 
-* isort: Implemantaion of insertion sort using pointers
-* txtfind: Work with txt.
+* isort: Implementation of insertion sort using pointers
+* txtfind: Work with text.
